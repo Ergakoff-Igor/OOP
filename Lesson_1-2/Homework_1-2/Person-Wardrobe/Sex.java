@@ -1,5 +1,3 @@
-
-
     enum Sex {
         man,
         woman

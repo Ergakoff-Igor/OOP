@@ -28,7 +28,7 @@ public class Cat {
      * @param name   Имя животного
      * @param Number Номер животного
      */
-    private Cat(String name, int Number) {
+    public Cat(String name, int Number) {
         if ((name.isEmpty()
                 || Character.isDigit(name.charAt(0)))
                 || Cat.names.indexOf(name) != -1)
@@ -56,48 +56,48 @@ public class Cat {
     // Методы состояния живлтного животного
     public void power(int num) {
         if (num == 1) {
-            this.RunCat();
+            this.runCat();
             this.state = State.hungry;
-            this.CatBawl();
-            this.CatEat();
+            this.catBawl();
+            this.catEat();
             this.state = State.sleep;
         }if (num == 2) {
             this.state = State.sleep; 
-            this.CatSleep();
+            this.catSleep();
             this.state = State.dontSleep;
-            this.CatAwake();  
-            this.RunCat();
+            this.catAwake();  
+            this.runCat();
             this.state = State.hungry;
-            this.CatBawl();
-            this.CatEat();
-            this.CatSleep();
+            this.catBawl();
+            this.catEat();
+            this.catSleep();
             this.state = State.sleep;                    
         } else {
             this.state = State.sleep;  
-            this.CatSleep();
+            this.catSleep();
         }
     }
 
     /** Кот прибежал */
-    public void RunCat() {
+    public void runCat() {
         System.out.println("Кот прибежал...");
     }
 
     /** Кот спит */
-    public void CatSleep() {
+    public void catSleep() {
         System.out.println("Котик спит, он устал");
     }
 
-    public void CatAwake(){
+    public void catAwake(){
         System.out.println("Кот проснулся");
     }
     /** Кот орёт "Мяу-Мяу" */
-    public void CatBawl() {
+    public void catBawl() {
         System.out.println("Кот орёт 'Мяу-Мяу'");
     }
 
     /** Кот ест */
-    public void CatEat() {
+    public void catEat() {
         System.out.println("Кот ест");
     }
 

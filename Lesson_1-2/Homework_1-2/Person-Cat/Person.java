@@ -22,7 +22,7 @@ public class Person {
 
 
     /** Человек зовет кота Кис-кис */
-    public void CallCat() {
+    public void callCat() {
         System.out.printf("%s зовет кота Кис-кис\n", name);
     }
 

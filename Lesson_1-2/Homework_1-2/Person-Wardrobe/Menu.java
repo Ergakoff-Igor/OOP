@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Menu {
     Person human = new Person("Игорь");
-    HomeFurniture homeFurniture = new HomeFurniture("Шкаф");
+    Wardrobe homeFurniture = new Wardrobe("Шкаф");
 
     enum State {
         Open, Close
@@ -17,30 +17,30 @@ public class Menu {
 
                 switch (task) {
                     case 1:
-                        human.OpenFurniture();
-                        homeFurniture.power();
+                        human.openFurniture();
+                        human.powerFurniture();
                         human.pushFromToWardrobe();
-                        human.CloseFurniture();
-                        homeFurniture.power();
+                        human.closeFurniture();
+                        human.powerFurniture();
                         break;
                     case 2:
-                        human.OpenFurniture();
-                        homeFurniture.power();
+                        human.openFurniture();
+                        human.powerFurniture();
                         human.pullToWardrobe();
-                        human.CloseFurniture();
-                        homeFurniture.power();
+                        human.closeFurniture();
+                        human.powerFurniture();
                         break;
                     case 3:
-                        homeFurniture.power();
+                        human.powerFurniture();     
                         human.pushFromToWardrobe();
-                        human.CloseFurniture();
-                        homeFurniture.power();
+                        human.closeFurniture();
+                        human.powerFurniture();
                         break;
                     case 4:
-                        homeFurniture.power();
+                        human.powerFurniture();
                         human.pullToWardrobe();
-                        human.CloseFurniture();
-                        homeFurniture.power();
+                        human.closeFurniture();
+                        human.powerFurniture();
                         break;
                     default:
                         System.out.println("Некорректный ввод");

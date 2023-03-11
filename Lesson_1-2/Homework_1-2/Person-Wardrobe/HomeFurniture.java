@@ -1,97 +1,33 @@
+public abstract class HomeFurniture {
+    protected String name;
+    private String color;
 
-import java.util.ArrayList;
 
-
-public class HomeFurniture {
-
-    enum State {
-        Open, Close
+    public HomeFurniture (String name, String color) {
+        this.name = name;
+        this.color = color;
     }
 
-    private static int defaultIndex;
-    private static ArrayList<String> names;
 
-    static {
-        defaultIndex = 1;
-        names = new ArrayList<String>();
+    public HomeFurniture (String name) {
+        this.name = name;
     }
 
-    /** Номер шкафа */
-    private int Number;
-
-    /** Имя шкафа */
-    private String name;
-    private State state;
-
-    /**
-     * Создание шкафа
-     * 
-     * @param name  Имя шкафа
-     * @param Number Номер шкафа
-     */
-    private HomeFurniture(String name, int Number) {
-        if ((name.isEmpty()
-                || Character.isDigit(name.charAt(0)))
-                || HomeFurniture.names.indexOf(name) != -1)
-        {
-            this.name =
-             String.format("DefaultName_%d", defaultIndex++);
-        } else {
-            this.name = name;
-        }
-
-        HomeFurniture.names.add(this.name);
-        this.Number = Number;
-        this.state = State.Close;
-
-    }
-
-    
-
-
-    public HomeFurniture(String name) {
-        this(name, 1);
-    }
-
-    public HomeFurniture() {
-        this("");
-    }
-
-    // Методы открытия/закрытия шкафа
-    public void power() {
-        if (this.state == State.Close) {
-            this.OpenDoor();
-            this.state = State.Open;
-        } else {
-            this.CloseDoor();
-            this.state = State.Close;
-        }
-    }
-
-    /** Открыть шкаф */
-    public void OpenDoor() {
-        System.out.println("Дверца открыта...");
-    }
-
-    /** Закрыть шкаф */
-    public void CloseDoor() {
-        System.out.println("Дверца закрыта...");
-    }
-    
-
-
-
-    public int getNumber() {
-        return this.Number;
-    }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
-
-    @Override
-    public String toString() {
-        return String.format("%s %d\n", this.name, this.Number);
+    public void setName(String name) {
+        this.name = name;
     }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
 }

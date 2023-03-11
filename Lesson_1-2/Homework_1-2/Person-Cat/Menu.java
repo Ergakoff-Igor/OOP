@@ -17,15 +17,15 @@ public class Menu {
 
                 switch (task) {
                     case 1:
-                        human.CallCat();
+                        human.callCat();
                         cat.power(task);
                         break;
                     case 2:
-                        human.CallCat();
+                        human.callCat();
                         cat.power(task);
                         break;
                         case 3:
-                        human.CallCat();
+                        human.callCat();
                         cat.power(task);
                         break;                        
                     default:
