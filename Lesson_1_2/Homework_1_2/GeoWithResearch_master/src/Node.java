@@ -19,7 +19,15 @@ class Node {
         return String.format("<%s(%s)-> %s>", p1, re, p2);
     }
 
+    public void setP1(Person person) {
+        this.p1 = person;
+    }
+
     public void setP2(Person person) {
         this.p2=person;
+    }
+
+    public void setRe(Relationship re) {
+        this.re = re;
     }
 }

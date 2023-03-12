@@ -50,5 +50,32 @@ public class Reserch {
 
     }
 
+    /**
+     * Получить бабушек и дедушек
+     */
+    public ArrayList<String> grand(Person person) {
+        ArrayList<Node> parents = new ArrayList<>();
+        for (Node parent : this.tree) {
+            if (parent.getRe() == Relationship.parent && parent.getP2().equals(person)) {
+                parents.add(parent);
+                if (parents.size() > 1) break;
+            }
+        }
+        HashSet<Person> grand = new HashSet<>();
+        for (Node parent : parents) {
+            for (Node t : this.tree) {
+                if (parent.getP1().equals(t.getP1()) &&
+                        t.getRe() == Relationship.children) {
+                            grand.add(t.getP2());
+                }
+            }
+        }
+        for (Person p : grand) {
+            result.add(p.getFullName());
+        }
+        return result;
+
+    }    
+
 
 }
