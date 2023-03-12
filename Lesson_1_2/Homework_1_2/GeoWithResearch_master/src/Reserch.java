@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashSet;
 
-public class Reserch {
+public class Reserch implements ActionReserch{
     ArrayList<String> result = new ArrayList<>();
     ArrayList<Node> tree;
 
@@ -12,6 +12,7 @@ public class Reserch {
     /**
      * Получить родственников person с отношением re
      */
+    @Override
     public ArrayList<String> spend(Person person, Relationship re) {
         for (Node t : tree) {
             if (t.getP1().getFullName().equals(person.getFullName()) && t.getRe() == re) {
@@ -25,6 +26,7 @@ public class Reserch {
     /**
      * Получить братьев и сестер
      */
+    @Override
     public ArrayList<String> brotherSister(Person person) {
         ArrayList<Node> parents = new ArrayList<>();
         for (Node parent : this.tree) {
@@ -53,6 +55,7 @@ public class Reserch {
     /**
      * Получить бабушек и дедушек
      */
+    @Override
     public ArrayList<String> grand(Person person) {
         ArrayList<Node> parents = new ArrayList<>();
         for (Node parent : this.tree) {
