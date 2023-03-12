@@ -1,4 +1,4 @@
 public interface ActionPeople {
-    void callCat();
-    void feedCat();
+    void callPet(String petName, int petNum, int task);
+    void feedPet();
 }

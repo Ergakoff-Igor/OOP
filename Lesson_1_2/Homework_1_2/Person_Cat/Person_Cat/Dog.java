@@ -1,17 +1,8 @@
+public class Dog extends Pet implements ActionPet {
 
-public class Cat extends Pet implements ActionPet {
-
-    public Cat(String name, Sex sex, int age, String color) {
-        super(name, sex, age, color);
-    }
-
-    public Cat(String name) {
+    public Dog(String name) {
         super(name);
     }
-
-    public Cat() {
-        super("");
-    }    
 
     private State state;
 
@@ -26,7 +17,7 @@ public class Cat extends Pet implements ActionPet {
             petEat();
             this.state = State.sleep;
         }
-        if (num == 2) {
+        if (num == 2 || num == 3) {
             this.state = State.sleep;
             petSleep();
             this.state = State.dontSleep;
@@ -38,39 +29,32 @@ public class Cat extends Pet implements ActionPet {
             petEat();
             petSleep();
             this.state = State.sleep;
-        } else {
-            this.state = State.sleep;
-            petSleep();
         }
     }
 
-    /** Кот прибежал */
     @Override
     public void runPet() {
-        System.out.println("Кот прибежал...");
+        System.out.println("Пес прибежал, помохал хвостом...");
     }
 
-    /** Кот спит */
     @Override
     public void petSleep() {
-        System.out.println("Котик спит, он устал");
+        System.out.println("Пес спит, его сон чуток, он всегда готов действовать!!!");
     }
 
     @Override
     public void petAwake() {
-        System.out.println("Кот проснулся");
+        System.out.println("Пес проснулся");
     }
 
-    /** Кот орёт "Мяу-Мяу" */
     @Override
     public void petSay() {
-        System.out.println("Кот орёт 'Мяу-Мяу'");
+        System.out.println("Пес говорит 'Гав-Гав'");
     }
 
-    /** Кот ест */
     @Override
     public void petEat() {
-        System.out.println("Кот ест");
+        System.out.println("Пес ест");
     }
 
     public State getState() {
@@ -85,4 +69,5 @@ public class Cat extends Pet implements ActionPet {
     public String toString() {
         return String.format("%s", getName());
     }
+    
 }
