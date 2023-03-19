@@ -1,5 +1,5 @@
 
-public class Cat extends Pet implements ActionPet {
+public class Cat extends Pet implements ActionPet, PetEat, PetMoving, PetSay, PetSleeping {
 
     public Cat(String name, Sex sex, int age, String color) {
         super(name, sex, age, color);
@@ -85,4 +85,6 @@ public class Cat extends Pet implements ActionPet {
     public String toString() {
         return String.format("%s", getName());
     }
+
+    
 }

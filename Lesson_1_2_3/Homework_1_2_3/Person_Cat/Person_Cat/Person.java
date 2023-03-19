@@ -13,7 +13,6 @@ public class Person extends Human implements ActionPeople{
         super("");
     }
 
-    // String petName = new Pet().getName();
     /** Человек зовет кота Кис-кис */
     @Override
     public void callPet(String petName, int petNum, int task) {

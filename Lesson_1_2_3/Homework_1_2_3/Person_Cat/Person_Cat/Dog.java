@@ -1,4 +1,4 @@
-public class Dog extends Pet implements ActionPet {
+public class Dog extends Pet implements ActionPet, PetEat, PetMoving, PetSay, PetSleeping {
 
     public Dog(String name) {
         super(name);

@@ -27,6 +27,7 @@ public class Menu {
 
                 switch (task) {
                     case 1:
+                        
                         human.callPet(this.petName, petNum, task);
                         break;
                     case 2:
