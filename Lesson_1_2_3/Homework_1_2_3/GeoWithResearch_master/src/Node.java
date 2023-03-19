@@ -1,4 +1,6 @@
-class Node {
+import java.util.Iterator;
+
+public class Node implements Comparable<Node>{
     private Person p1;
     private Relationship re; 
     private Person p2;
@@ -29,5 +31,15 @@ class Node {
 
     public void setRe(Relationship re) {
         this.re = re;
+    }
+
+    @Override
+    public int compareTo(Node o) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
+    }
+
+    public Iterator<Node> iterator() {
+        return null;
     }
 }

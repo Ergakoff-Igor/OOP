@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.TreeSet;
 
 public interface ActionReserch {
     /**
@@ -9,11 +10,10 @@ public interface ActionReserch {
     /**
      * Получить братьев и сестер
      */    
-    ArrayList<String> brotherSister(Person person);
+    ArrayList<String> brothers_sisters(Person person, Relationship re1, Relationship re2);
 
-    /**
-     * Получить бабушек и дедушек
-     */
+
     ArrayList<String> grand(Person person);
 
+    TreeSet<Person> allRelatives();
 }
