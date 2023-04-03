@@ -1,22 +1,30 @@
 package Homework4.Core.Models;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+
+
+import java.time.LocalDateTime;
+;
 
 public class Task  implements Comparable<Task> {
     public String id;
-    public LocalDate date;
-    public LocalTime time;
-    public LocalDate dedline;
+    public LocalDateTime date;
+    public LocalDateTime dedline;
     public String firstName;
     public String lastName;
     public String description;
+    public Priority priority;
+    public Status status;
 
-    public Task(String id, String firstName, String lastName, String description) {
+    public Task(String id, LocalDateTime date, LocalDateTime dedline, String firstName, String lastName, String description, Priority priority, Status status) {
         this.id = id;
+        this.date = date;
+        this.dedline = dedline;
         this.firstName = firstName;
         this.lastName = lastName;
         this.description = description;
+        this.priority = priority;
+        this.status = status;
+
     }
     
     

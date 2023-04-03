@@ -13,7 +13,7 @@ public class Scheduler {
         tasks = new ArrayList<Task>();
     }
 
-    // create
+    // Добавление задачи
     public boolean add(Task task) {
         boolean flag = false;
         if (!tasks.contains(task)) {
@@ -23,15 +23,12 @@ public class Scheduler {
         return flag;
     }
 
-    // read
+    // Вывод задачи по индексу
     public Task getTask(int index) {
         return contains(index) ? tasks.get(index) : null;
     }
 
-    // update
-    // ???...
-
-    // delete
+    // Удаление задачи
     public boolean remove(Task task) {
         boolean flag = false;
         if (tasks.indexOf(task) != -1) {
@@ -48,7 +45,6 @@ public class Scheduler {
     }
 
     public List<Task> gettasks() {
-        // if ???...
         return tasks;
     }
 
