@@ -1,11 +1,12 @@
-package Phonebook.Core.MVP;
+package Homework5.Phonebook.Core.MVP;
 
 public interface View {
     String getFirstName();
     void setFirstName(String value);
     String getLastName();
     void setLastName(String value);
-    String getDescription();
-    void setDescription(String value);
-    //
+    String getСompany();
+    void setСompany(String value);
+    String getPhone();
+    void setPhone(String value);   
 }

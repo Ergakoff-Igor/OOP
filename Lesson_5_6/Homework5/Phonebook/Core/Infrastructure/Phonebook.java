@@ -1,9 +1,9 @@
-package Phonebook.Core.Infrastructure;
+package Homework5.Phonebook.Core.Infrastructure;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import Phonebook.Core.Models.Contact;
+import Homework5.Phonebook.Core.Models.Contact;
 
 public class Phonebook {
 
@@ -13,7 +13,7 @@ public class Phonebook {
         contacts = new ArrayList<Contact>();
     }
 
-    // create
+    // Добавление контакта
     public boolean add(Contact contact) {
         boolean flag = false;
         if (!contacts.contains(contact)) {
@@ -23,15 +23,12 @@ public class Phonebook {
         return flag;
     }
 
-    // read
+    // Вывод контакта
     public Contact getCotact(int index) {
         return contains(index) ? contacts.get(index) : null;
     }
 
-    // update
-    // ???...
-
-    // delete
+    // Удаление контакта
     public boolean remove(Contact contact) {
         boolean flag = false;
         if (contacts.indexOf(contact) != -1) {
@@ -48,13 +45,11 @@ public class Phonebook {
     }
 
     public List<Contact> getContacts() {
-        // if ???...
-        return contacts;
+        return this.contacts;
     }
 
 
     public int count() {
         return contacts.size();
     }
-
 }

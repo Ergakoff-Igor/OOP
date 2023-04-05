@@ -1,5 +1,5 @@
-package Phonebook;
+package Homework5.Phonebook;
 
 public class Config {
-    public static String pathDb = "data.db";
+    public static String pathDb = "data.csv";
 }

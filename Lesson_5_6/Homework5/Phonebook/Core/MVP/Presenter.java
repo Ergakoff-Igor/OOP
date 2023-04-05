@@ -1,7 +1,9 @@
-package Phonebook.Core.MVP;
-import Phonebook.Core.Models.Contact;
+package Homework5.Phonebook.Core.MVP;
+
+import Homework5.Phonebook.Core.Models.Contact;
+
 public class Presenter {
-    
+
     private Model model;
     private View view;
 
@@ -10,43 +12,34 @@ public class Presenter {
         model = new Model(pathDb);
     }
 
-    public void LoadFromFile() {
+    public int LoadFromFile() {
         model.load();
 
         if (model.currentBook().count() > 0) {
             model.setCurrentIndex(0);
-            var contact = model.currentContact();
+            Contact contact = model.currentContact();
 
+            System.out.printf("№: %d из: %d\n", model.getCurrentIndex() + 1, model.currentBook().count());
             view.setFirstName(contact.firstName);
             view.setLastName(contact.lastName);
-            view.setDescription(contact.description);
+            view.setСompany(contact.company);
+            view.setPhone(contact.phone);
+
         }
+        return model.getCurrentIndex();
     }
 
     public void add() {
         model.currentBook().add(
-                new Contact(view.getFirstName(), view.getLastName(), view.getDescription()));
+                new Contact(view.getFirstName(), view.getLastName(), view.getСompany(), view.getPhone()));
     }
 
-    public void remove() {
-        Contact contact = new Contact(view.getFirstName(), view.getLastName(), view.getDescription());
-        model.currentBook().remove(contact);
-
-        if (model.currentBook().count() < 1) {
-            model.setCurrentIndex(-1);
-
-            view.setFirstName("");
-            view.setLastName("");
-            view.setDescription("");
-        } else {
-            model.setCurrentIndex(model.getCurrentIndex() - 1);
-            if (model.getCurrentIndex() < 0)
-                model.setCurrentIndex(0);
-
-            Contact temp = model.currentContact();
-            view.setFirstName(temp.firstName);
-            view.setLastName(temp.lastName);
-            view.setDescription(temp.description);
+    public void remove(int index) {
+        if (index == - 1 || index == model.currentBook().count()-1) {
+            model.currentBook().remove(model.currentBook().getCotact(index));
+        }
+        else {
+        model.currentBook().remove(model.currentBook().getCotact(index - 1));
         }
     }
 
@@ -54,27 +47,41 @@ public class Presenter {
         model.save();
     }
 
-    public void next() {
+    public int next() {
         if (model.currentBook().count() > 0) {
             if (model.getCurrentIndex() + 1 < model.currentBook().count()) {
                 model.setCurrentIndex(model.getCurrentIndex() + 1);
                 Contact contact = model.currentContact();
+                System.out.printf("№: %d из: %d\n", model.getCurrentIndex() + 1, model.currentBook().count());
                 view.setFirstName(contact.firstName);
                 view.setLastName(contact.lastName);
-                view.setDescription(contact.description);                
+                view.setСompany(contact.company);
+                view.setPhone(contact.phone);
+            } else {
+                System.out.println("Вы просмотрели все контакты. Введите \"1\"");
             }
         }
+        return model.getCurrentIndex();
     }
 
-    public void prev() {
+    public int prev() {
         if (model.currentBook().count() > 0) {
             if (model.getCurrentIndex() - 1 > -1) {
                 model.setCurrentIndex(model.getCurrentIndex() - 1);
                 Contact contact = model.currentContact();
+                System.out.printf("№: %d из: %d\n", model.getCurrentIndex() + 1, model.currentBook().count());
                 view.setFirstName(contact.firstName);
                 view.setLastName(contact.lastName);
-                view.setDescription(contact.description);  
+                view.setСompany(contact.company);
+                view.setPhone(contact.phone);
+            } else {
+                System.out.println("Вы попали в начало списка. Введите \"2\"");
             }
         }
+        return model.getCurrentIndex();
+    }
+
+    public void viewAll() {
+
     }
 }
