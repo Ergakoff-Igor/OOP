@@ -42,12 +42,19 @@ public class ConsoleView implements View {
     }
     @Override
     public String getPhone() {
-        System.out.printf("Телефон: ");
+        System.out.printf("Добавить телефон: ");
         return in.nextLine();
     }
     @Override
     public void setPhone(String value) {
-        System.out.printf("Телефон: %s\n", value); 
+        System.out.printf("Телефоны: %s\n", value); 
     }
+    @Override
+    public void setContact(String fname, String lname, String com, String phone) {
+        System.out.printf("Имя: %-10.10s Фамилия: %-10.10s Компания: %-10.10s Телефоны: %s \n", fname, lname, com, phone);
+    }
+
+    
+
     
 }

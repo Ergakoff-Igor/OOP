@@ -9,4 +9,5 @@ public interface View {
     void setСompany(String value);
     String getPhone();
     void setPhone(String value);   
+    void setContact(String fname, String lname, String com, String phone); 
 }
